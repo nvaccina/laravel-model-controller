@@ -20,4 +20,10 @@ class PageController extends Controller
     public function contacts(){
         return view('contacts');
     }
+
+    public function movie_detail($id){
+        $movie = Movie::where('id', $id)->first();
+
+        return view('movie_detail', compact('movie'));
+    }
 }
